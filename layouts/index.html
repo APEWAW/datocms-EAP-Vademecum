@@ -1,23 +1,39 @@
-{{ partial "header.html" . }}
+{{ define "main" }}
 
-<div class="showcase is-loading" {{ if .Paginator.HasNext }}data-next-url="{{ .Paginator.Next.URL }}"{{ end }}>
-  {{ range (where .Paginator.Pages "Type" "works") }}
-    <div class="showcase__item">
-      <figure class="card">
-        <a href="{{ .Permalink }}" class="card__image">
-          <img src="{{ .Params.coverimage }}">
-        </a>
-        <figcaption class="card__caption">
-          <h6 class="card__title">
-            <a href="{{ .Permalink }}">{{ .Title }}</a>
-          </h6>
-          <div class="card__description">
-            <p>{{ .Params.excerpt }}</p>
-          </div>
-        </figcaption>
-      </figure>
+<div class="o-container">
+
+  <main>
+
+    <div class="o-container">
+
+      <div class="o-grid">
+
+        <div class="o-grid__col u-1/3">
+
+          {{ partial "side.html" . }}
+
+        </div>
+
+        <div class="o-grid__col u-1/3">
+
+          <h1>
+
+            Donner du sens à la formation
+
+          </h1>
+
+          <h2>
+
+            Concevoir et animer des formations engageantes et favorisant l’apprentissage
+
+          </h2>
+
+        </div>
+
+      </div>
+
     </div>
-  {{ end }}
-</div>
 
-{{ partial "footer.html" . }}
+  </main>
+
+{{ end }}

@@ -1,18 +1,63 @@
-{{ partial "header.html" . }}
+{{ define "main" }}
 
-<article class="sheet">
-  <div class="sheet__inner">
-    <h1 class="sheet__title">{{ .Title }}</h1>
-    <p class="sheet__lead">{{ .Params.excerpt }}</p>
-    <div class="sheet__gallery">
-      <img src="{{ .Params.photo }}" />
+  <main>
+
+    <div class="o-container">
+
+      <div class="o-grid">
+
+        <div class="o-grid__col u-hidden u-inline-block@sm u-4/12@sm">
+
+          {{ partial "side.html" . }}
+
+        </div>
+
+        <div class="o-grid__col u-7/12@sm">
+
+          {{ if .Param "section" }}
+
+            {{ .Param "section" }}
+
+          {{ end }}
+
+          <h1 class="u-pb">
+
+            {{ .Title }}
+
+          </h1>
+
+          {{ .Content }}
+
+          <div class="u-pt-x3">
+
+            {{ if .Param "next" }}
+
+              <a href="{{ .Param "next" }}" class="u-color-blue u-float-right">
+
+                Next chapter
+
+              </a>
+
+            {{ end }}
+
+            {{ if .Param "prev" }}
+
+              <a href="{{ .Param "prev" }}" class="u-color-blue">
+
+                Prev chapter
+
+              </a>
+
+            {{ end }}
+
+          </div>
+
+        </div>
+
+      </div>
+
     </div>
-    <div class="sheet__body">
-      {{ .Content }}
-    </div>
-  </div>
-</article>
 
-{{ partial "footer.html" . }}
+  </main>
 
-
+{{ end }}
