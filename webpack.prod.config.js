@@ -3,12 +3,12 @@ const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: {
-    all: __dirname + '/assets/js/index.js',
-  },
-  resolve: {
-    modules: [path.resolve(__dirname + '/assets/js'), 'node_modules'],
-  },
+  // entry: {
+  //   all: __dirname + '/assets/js/index.js',
+  // },
+  // resolve: {
+  //   modules: [path.resolve(__dirname + '/assets/js'), 'node_modules'],
+  // },
   output: {
     path: __dirname + '/public/assets',
     filename: '[name].js',
@@ -56,4 +56,3 @@ module.exports = {
     })
   ]
 };
-
